@@ -11,3 +11,19 @@
 # 1 2 1 8 9 6 5 4 3 4
 # Вывод: 6
 
+n = int(input('Введите длину списка: '))
+if n <= 0:
+    print('Недопустимый формат числа.')
+else:
+    print('Получившийся массив: ')
+    import random      
+    randomList = []
+    for elements in range(1, n + 1):
+        randomList.append(random.randint(0, n))
+    print(randomList)
+    print('')
+
+    # x = int(input('Введите число, которое необходимо проверить: '))
+
+    print(randomList.sort())
+    
