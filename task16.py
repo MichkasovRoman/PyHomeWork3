@@ -19,7 +19,7 @@ else:
     import random      
     randomList = []
     for elements in range(1, n + 1):
-        randomList.append(random.randint(0, n // 2))
+        randomList.append(random.randint(1, n // 2))
     print(randomList)
     print('')
 
@@ -29,4 +29,4 @@ else:
     for el in randomList:
         if el == x:
             count += 1
-    print(f'В построенном списке количество элементов со значением {x}: {count}.')
+    print(f'Количество элементов со значением {x} в построенном списке: {count}.')
