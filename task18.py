@@ -23,16 +23,20 @@ print('')
 
 x = int(input('Введите число, которое необходимо проверить: '))
 
+for element in randomList:
+    if x == element:
+        print('Ближайшим к числу x в списке является само это число.')
+    break
+
 randomList.append(x)
 setArr = set(randomList)   # таким нехитрым способом я удаляю из списка повторяющиеся элементы   
-listSet = list(setArr)     # и упорядочиваю элементы нового списка по возрастанию  
-# print(listSet)     
+listSet = list(setArr)     # и упорядочиваю элементы нового списка по возрастанию   
 lastInd = len(listSet) - 1
 
 if listSet[0] == x:
-    print(listSet[1])
+    print(f'Элемент списка, ближайший к числу {x}:\n{listSet[1]}')
 elif listSet[lastInd] == x:
-    print(listSet[lastInd - 1])
+    print(f'Элемент списка, ближайший к числу {x}:\n{listSet[lastInd - 1]}')
 else:
     i = 1
     temp1 = 0
@@ -42,7 +46,7 @@ else:
             temp1 = listSet[i - 1]
             temp2 = listSet[i + 1]
         i = i + 1
-
+            
     if x - temp1 <= temp2 - x:
         print(f'Элемент списка, ближайший к числу {x}:\n{temp1}')
     else:
