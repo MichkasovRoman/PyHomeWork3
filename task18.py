@@ -12,7 +12,7 @@
 # Вывод: 6
 
 n = int(input('Введите длину списка: '))
-print('Получившийся массив: ')
+print('Получившийся список: ')
 import random      
 randomList = []
 for elements in range(0, n):
