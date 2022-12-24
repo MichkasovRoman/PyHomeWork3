@@ -23,33 +23,31 @@ print('')
 
 x = int(input('Введите число, которое необходимо проверить: '))
 
-for element in randomList:
-    if x == element:
-        print('Ближайшим к числу x в списке является само это число.')
-    break
-
-randomList.append(x)
-setArr = set(randomList)   # таким нехитрым способом я удаляю из списка повторяющиеся элементы   
-listSet = list(setArr)     # и упорядочиваю элементы нового списка по возрастанию   
-lastInd = len(listSet) - 1
-
-if listSet[0] == x:
-    print(f'Элемент списка, ближайший к числу {x}:\n{listSet[1]}')
-elif listSet[lastInd] == x:
-    print(f'Элемент списка, ближайший к числу {x}:\n{listSet[lastInd - 1]}')
+if x in randomList:
+    print(f'Ближайшим к {x} числом в списке является само это число.')
 else:
-    i = 1
-    temp1 = 0
-    temp2 = 0
-    while i <= lastInd - 1:
-        if listSet[i] == x:
-            temp1 = listSet[i - 1]
-            temp2 = listSet[i + 1]
-        i = i + 1
-            
-    if x - temp1 <= temp2 - x:
-        print(f'Элемент списка, ближайший к числу {x}:\n{temp1}')
+    randomList.append(x)
+    setArr = set(randomList)   # таким нехитрым способом я удаляю из списка повторяющиеся элементы   
+    listSet = list(setArr)     # и упорядочиваю элементы нового списка по возрастанию   
+    lastInd = len(listSet) - 1
+
+    if listSet[0] == x:
+        print(f'Элемент списка, ближайший к числу {x}:\n{listSet[1]}')
+    elif listSet[lastInd] == x:
+        print(f'Элемент списка, ближайший к числу {x}:\n{listSet[lastInd - 1]}')
     else:
-        print(f'Элемент списка, ближайший к числу {x}:\n{temp2}') 
+        i = 1
+        temp1 = 0
+        temp2 = 0
+        while i <= lastInd - 1:
+            if listSet[i] == x:
+                temp1 = listSet[i - 1]
+                temp2 = listSet[i + 1]
+            i = i + 1
+            
+        if x - temp1 <= temp2 - x:
+            print(f'Элемент списка, ближайший к числу {x}:\n{temp1}')
+        else:
+            print(f'Элемент списка, ближайший к числу {x}:\n{temp2}') 
 
     
